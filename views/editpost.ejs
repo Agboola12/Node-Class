@@ -1,0 +1,11 @@
+<%- include("../partials/head.html") %>
+    
+    <div>
+        <form method="post" action="/editmore/<%=post._id%>">
+            <input name="title" type="text" value=<%=post.title%>  />
+            <input name="more" type="text" value=<%=post.more%>  />
+            <button type="submit" class="btn btn-success">Edit</button>
+        </form>
+    </div>
+    
+<%- include("../partials/bottom.html") %>

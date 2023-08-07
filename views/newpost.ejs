@@ -1,0 +1,24 @@
+<%- include("../partials/head.html") %>
+
+<form class="text-center" method="post" action="/newpost">
+    <input type="text" name="title" placeholder="Title" class="m-2 border- rounded"/><br/>
+    <input type="text" name="more" placeholder="More" class="m-2 border- rounded"/> <br/>
+    <input type="file" name="picture" />
+    <input type="submit" class="m-2 btn btn-success"/>
+</form>
+
+
+<!-- <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" />
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form> -->
+<div>
+   
+    <% posts.forEach(each => { %>
+     <h3><%= each.title %> </h3>
+     <p><%= each.more %> </p>
+    <% }) %>
+</div>
+    
+
+    <%- include("../partials/bottom.html") %>

@@ -1,0 +1,31 @@
+<table class='table table-bordered border-white '>
+            
+    <tr >
+        <th>S/N</th>
+        <th>Title</th>
+        <th>More</th>
+        <th colspan="3">Action</th>
+    </tr>
+    <% posts.forEach((each,index )=> { %>
+    <tr >
+        <td key={index}><%= index + 1 %></td>
+        <td><%= each.title %></td>
+        <td><%= each.more %></td>
+        <td>
+            <form method="post" action="/delpost/<%=index%>"> 
+                <button type="submit" class="btn btn-danger"> <i class="fa fa-trash"></i></button>
+            </form>
+        </td>
+        <td>
+            <form method="post" action="view/<%=index%>">
+                <button type="submit" class="btn btn-success"> <i class="fa fa-eye"></i></button>
+            </form>
+        </td>
+        <td>
+            <form method="post" action="edit/<%=index%>">
+                <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i></button>
+            </form>
+        </td>
+    </tr>
+    <% }) %>
+</table>

@@ -1,0 +1,51 @@
+<%- include("../partials/head.html") %>
+    
+    <div class=" shadow-lg p-3 mb-5 bg-white rounded m-5" style="width: 40%;">
+
+       
+       
+        <!-- parameterizzed route -->
+
+        <table class='table table-bordered border-white '>
+            
+            <tr >
+                <th>S/N</th>
+                <th>Title</th>
+                <th>More</th>
+                <th colspan="3">Action</th>
+            </tr>
+            <% Posts.forEach(({title, more, _id}, index)=> { %>
+                <tr >
+                 
+                <td key={index}><%= index + 1 %></td>
+                <td><%= title %></td>
+                <td><%= more %></td>
+                <td><%= data11 %> </td>
+                <img src="postimages/<%= post.imagePath:filename %>" /> 
+                <td>
+                    <form method="post" action="/delpost/<%= _id %>">
+                         
+                        <button type="submit" class="btn btn-danger"> <i class="fa fa-trash"></i></button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="view/<%=_id%>">
+                        <button type="submit" class="btn btn-success"> <i class="fa fa-eye"></i></button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="edit/<%=_id%>">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i></button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+        
+        
+
+
+
+                 
+    </div>
+    <%- include("../partials/bottom.html") %>
